@@ -22,3 +22,5 @@ fetch('DB/department.json')
 	.catch((err) => {
 		console.log(err);
 	});
+
+   
