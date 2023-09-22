@@ -1,65 +1,89 @@
 @import 'reset';
 
-section{
-    width: 70vw;
-    margin: 10vh auto;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+section {
+	width: 70vw;
+	margin: 10vh auto;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
 
-    article{
-        width: 30%;
-        padding: 1rem;
-        background: #fff;
-        margin-bottom: 3rem;
-        box-shadow: 10px 10px 20px rgba(0,0,0,0.05);
+	article {
+		width: 30%;
+		padding: 1rem;
+		background: #fff;
+		margin-bottom: 3rem;
+		box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.05);
 
-        .pic{
-            width: 100%;
-            height: 20vw;
-            margin-bottom: 1rem;
+		.pic {
+			width: 100%;
+			height: 20vw;
+			margin-bottom: 1rem;
+			position: relative;
 
-            img{
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
-            }
-        }
-        h2{
-            font: 200 2rem 'work sans';
-            color: #333;
-            margin-bottom: 0.7rem;
-        }
-        p{
-            font: 0.8rem 'arial';
-            color: #555;
-            margin-bottom: 30px;
-        }
-    }
+			img {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+				position: absolute;
+				top: 0;
+				left: 0;
+				transition: 0.5s;
+
+				&:nth-of-type(1) {
+					filter: blur(20px) saturate(1.3);
+					opacity: 0;
+				}
+				&:nth-of-type(2) {
+					filter: saturate(0);
+				}
+			}
+
+			&:hover {
+				img:nth-of-type(1) {
+					opacity: 0.5;
+					transform: translateY(5%);
+				}
+				img:nth-of-type(2) {
+					filter: saturate(1);
+				}
+			}
+		}
+
+		h2 {
+			font: 200 2rem 'work sans';
+			color: #333;
+			margin-bottom: 0.7rem;
+		}
+		p {
+			font: 0.8rem 'arial';
+			color: #555;
+			margin-bottom: 30px;
+		}
+	}
 }
-@media screen and (max-width: 780px){
-    section{
-        margin: 8vh auto;
-    
-        article{
-            width: 46%;
-            margin-bottom: 2rem;
-    
-            .pic{
-                height: 20vw;
-    
-            }
 
-        }
-    }
+@media screen and (max-width: 789px) {
+	section {
+		margin: 8vh auto;
+
+		article {
+			width: 46%;
+			margin-bottom: 2rem;
+
+			.pic {
+				height: 20vw;
+			}
+		}
+	}
 }
-@media screen and (max-width: 486px){
-    section{
-        article{
-            width: 100%;
-            .pic{
-                height: 60vw;
-            }
-        }
-    }
+
+@media screen and (max-width: 486px) {
+	section {
+		article {
+			width: 100%;
+			.pic {
+				height: 60vw;
+			}
+		}
+	}
 }
